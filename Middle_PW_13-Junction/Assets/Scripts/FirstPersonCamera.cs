@@ -9,7 +9,7 @@ public class FirstPersonCamera : MonoBehaviour
     private float verticalRotation;
     private float horizontalRotation;
 
-    private CinemachineCamera _camera;
+    //private CinemachineCamera _camera;
 
     private Vector3 offset;
 
@@ -17,7 +17,7 @@ public class FirstPersonCamera : MonoBehaviour
     {
         offset = transform.position;
 
-        _camera = GetComponent<CinemachineCamera>();
+        //_camera = GetComponent<CinemachineCamera>();
     }
 
     void LateUpdate()
