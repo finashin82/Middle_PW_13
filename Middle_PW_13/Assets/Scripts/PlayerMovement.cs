@@ -12,8 +12,6 @@ public class PlayerMovement : NetworkBehaviour
 
     public Camera Camera;
 
-    //public CinemachineCamera _cinemachineCamera;
-
     public float PlayerSpeed = 2f;
 
     public float JumpForce = 5f;
@@ -24,15 +22,10 @@ public class PlayerMovement : NetworkBehaviour
         if (HasStateAuthority)
         {
             Camera = Camera.main;
-            //Camera.GetComponent<FirstPersonCamera>().Target = transform;
-
-            //CinemachineCamera sceneCamera = FindObjectOfType<CinemachineCamera>();
 
             CinemachineCamera sceneCamera = FindFirstObjectByType<CinemachineCamera>();
 
             sceneCamera.Follow = transform;
-
-            //_cinemachineCamera.GetComponent<CinemachineCamera>().Follow = transform;
         }
     }
 

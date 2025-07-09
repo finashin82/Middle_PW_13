@@ -5,7 +5,8 @@ public class RaycastAttack : NetworkBehaviour
 {
     public int Damage { get; set; } = 10;
 
-    public PlayerMovement PlayerMovement;
+    //public PlayerMovement PlayerMovement;
+    public MovementPlayer MovementPlayer;
 
     void Update()
     {
@@ -14,8 +15,8 @@ public class RaycastAttack : NetworkBehaviour
             return;
         }
 
-        Ray ray = PlayerMovement.Camera.ScreenPointToRay(Input.mousePosition);
-        ray.origin += PlayerMovement.Camera.transform.forward;
+        Ray ray = MovementPlayer.Camera.ScreenPointToRay(Input.mousePosition);
+        ray.origin += MovementPlayer.Camera.transform.forward;
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
