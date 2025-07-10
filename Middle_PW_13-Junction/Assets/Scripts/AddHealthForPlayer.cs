@@ -7,13 +7,9 @@ public class AddHealthForPlayer : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Есть косание.");
-
         if (other.transform.TryGetComponent<Health>(out var health))
         {
-            Debug.Log("Компонент найден.");
-
-            health.AddHealth(HealthAmount);
+            health.AddHealthRpc(HealthAmount);
 
             Runner.Despawn(Object);
         }

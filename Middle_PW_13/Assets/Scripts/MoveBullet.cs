@@ -9,7 +9,5 @@ public class MoveBullet : NetworkBehaviour
     public override void FixedUpdateNetwork()
     {
         transform.position += Direction * speedBullet * Runner.DeltaTime;
-
-        //transform.Translate(Direction * speedBullet * Time.deltaTime, Space.World);
     }
 }

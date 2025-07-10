@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 393584579}
   - component: {fileID: 393584578}
   - component: {fileID: 393584577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,23 +728,6 @@ MonoBehaviour:
   Components:
   - {fileID: 410087040}
   _guid: d6f5eb68-d90f-48f3-
---- !u!1 &556086176 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3138160088350662608, guid: f3d76179ffd140a4b81d896c831d2e21, type: 3}
-  m_PrefabInstance: {fileID: 8363319241177691302}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &556086183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556086176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c00500fe9a00b93479457ad9cd841e6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &825265837
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,7 +963,7 @@ GameObject:
   - component: {fileID: 1494818238}
   - component: {fileID: 1494818239}
   - component: {fileID: 1494818240}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CubeCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1918,10 +1901,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3138160088350662608, guid: f3d76179ffd140a4b81d896c831d2e21, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 556086183}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d76179ffd140a4b81d896c831d2e21, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -11,6 +11,10 @@ public class MovementPlayer : NetworkBehaviour
 
     [SerializeField] private float speed;
 
+    [SerializeField] private float playerRadius;
+
+    [SerializeField] private LayerMask collisionMask;
+
     private CinemachineCamera freeLookCamera;
 
     private Rigidbody rb;
@@ -31,13 +35,6 @@ public class MovementPlayer : NetworkBehaviour
 
             rb = GetComponent<Rigidbody>();
         }
-    }
-
-    void Awake()
-    {
-        //rb = GetComponent<Rigidbody>();
-
-        //animator = GetComponent<Animator>();
     }
 
     public override void FixedUpdateNetwork()
@@ -78,7 +75,18 @@ public class MovementPlayer : NetworkBehaviour
             // Перемещение персонажа в направлении камеры
             //rb.MovePosition(rb.position + moveDirection * speed * Runner.DeltaTime);
 
-            transform.position = transform.position + moveDirection * speed * Runner.DeltaTime;
+            var newPosition = transform.position + moveDirection * speed * Runner.DeltaTime;
+
+            if (!Physics.CheckSphere(newPosition, playerRadius, collisionMask))
+            {
+                transform.position = newPosition;
+            }
+            else
+            {
+                Debug.Log("Столкновение!");
+            }
+
+            //transform.position = newPosition;
 
             //var velocity = moveDirection * speed;
             // Применяем движение

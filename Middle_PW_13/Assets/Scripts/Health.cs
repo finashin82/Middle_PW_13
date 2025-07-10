@@ -23,28 +23,28 @@ public class Health : NetworkBehaviour
         NetworkedHealth -= damage;
     }
 
-    public void AddHealth(int health)
-    {
-        if (HasStateAuthority)
-        {
-            NetworkedHealth += health;
-
-            Debug.Log($"+ {health} к здоровью. Теперь здоровья {NetworkedHealth}");
-        }
-        else
-        {
-            Debug.Log("Ошибка.");
-        }
-    }
-
-    // RPC для добавления здоровья (вызывается с клиента, выполняется на сервере)
-    //[Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority)]
-    //public void AddHealthRpc(int health)
+    //public void AddHealth(int health)
     //{
-    //    NetworkedHealth += health;
+    //    if (HasStateAuthority)
+    //    {
+    //        NetworkedHealth += health;
 
-    //    Debug.Log($"+ {health} к здоровью. Теперь здоровья {NetworkedHealth}");
+    //        Debug.Log($"+ {health} к здоровью. Теперь здоровья {NetworkedHealth}");
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("Ошибка.");
+    //    }
     //}
+
+    // RPC для добавления здоровья(вызывается с клиента, выполняется на сервере)
+    [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
+    public void AddHealthRpc(int health)
+    {
+        NetworkedHealth += health;
+
+        Debug.Log($"+ {health} к здоровью. Теперь здоровья {NetworkedHealth}");
+    }
 
     // RPC для смерти (выполняется на всех клиентах)
     [Rpc(RpcSources.StateAuthority, RpcTargets.All)]

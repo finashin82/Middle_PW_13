@@ -7,13 +7,9 @@ public class DamageForPlayer : NetworkBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collision");
-
         if (collision.transform.TryGetComponent<Health>(out var health))
         {
             health.DealDamageRpc(Damage);
-
-            Debug.Log("health");
         }
     }
 
