@@ -49,8 +49,6 @@ public class FireBullet : NetworkBehaviour
     {
         var fire = Runner.Spawn(bullet, transform.position, Quaternion.LookRotation(transform.forward));
 
-        //var direction = (transform.up + transform.right).normalized;
-
         fire.GetComponent<MoveBullet>().Direction = transform.up.normalized;
     }
 }
